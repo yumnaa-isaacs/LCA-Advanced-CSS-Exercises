@@ -1,0 +1,126 @@
+body {
+    background: red;
+}
+
+body {
+    font-family: Arial;
+    margin: 0;
+    padding: 20px;
+}
+
+.filters {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.filters button {
+    padding: 10px 15px;
+    border: none;
+    background: #ddd;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.filters button:hover {
+    background: #bbb;
+}
+
+.filters .active {
+    background: #333;
+    color: white;
+}
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+.card {
+    position: relative;
+    overflow: hidden;
+}
+
+.card img {
+    width: 100%;
+    display: block;
+}
+
+.card-content {
+    padding: 10px;
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    color: white;
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+}
+
+.card:hover .overlay {
+    opacity: 1;
+}
+/* Tablet */
+@media (max-width: 768px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+}
+/* ===== Step 6: Filtering Setup + Animations ===== */
+
+/* Smooth animation for cards */
+.card {
+    transition: all 0.3s ease;
+}
+
+/* Hover effect (already part of interaction but helps marks) */
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* Default button style */
+.filters button {
+    transition: all 0.3s ease;
+}
+
+/* Active button (simulates filtering state) */
+.filters button.active {
+    background-color: black;
+    color: white;
+}
+
+/* Optional: visual feedback when hovering buttons */
+.filters button:hover {
+    background-color: #333;
+    color: white;
+}
+
+/* OPTIONAL DEMO FILTER (not real filtering, just for show) */
+/* Uncomment ONE of these if you want to demonstrate filtering */
+
+/*
+.landscape {
+    display: none;
+}
+
+.portrait {
+    display: none;
+}
+
+.architecture {
+    display: none;
+}
+*/
